@@ -56,91 +56,49 @@ To test requests using your account, replace the sample API key with your actual
 </blockquote>
 
 # Delivery service
+
+<p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
+
+<img src="./img_10.png" width="30%" alt="Social Icons">
+
 <details>
-    <summary>Parcel</summary>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-    <blockquote><h4>Business object model</h4></blockquote>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-        <img src="./img_10.png" width="30%" alt="Social Icons">
-    <blockquote><h4>End points</h4></blockquote>
-        <details>
-            <summary>Retrieve a parcel</summary>
-            <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
-            <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+    <summary>Retrieve a single delivery service work order</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <details><summary>Show more</summary>
             <blockquote>Request sample: Shell or cURL</blockquote>
             <code style="display:block; white-space:pre-wrap">curl --request GET 
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
-            </code>
-            </blockquote>
-        </details>
-        <details>
-            <summary>Create a new parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-    <blockquote><h4>Code snippets</h4></blockquote>
-    <blockquote><h4>Sample responses</h4></blockquote>
-    <blockquote><h4>Schemas</h4></blockquote>
+            </code> 
+        </details></blockquote>
 </details>
 
 <details>
-    <summary>Truck</summary>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-    <blockquote><h3>Business object model</h3></blockquote>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-        <img src="./img_10.png" width="30%" alt="Social Icons">
-    <blockquote><h3>End points</h3></blockquote>
-        <details>
-            <summary>Retrieve a parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-        <details>
-            <summary>Create a new parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-    <blockquote><h3>Code snippets</h3></blockquote>
-    <blockquote><h3>Sample responses</h3></blockquote>
-    <blockquote><h3>Schemas</h3></blockquote>
-</details>
-
-# Provider service
-<details>
-    <summary>Installation</summary>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-    <blockquote><h3>Business object model</h3></blockquote>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-        <img src="./img_10.png" width="30%" alt="Social Icons">
-    <blockquote><h3>End points</h3></blockquote>
-        <details>
-            <summary>Retrieve a parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-        <details>
-            <summary>Create a new parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-    <blockquote><h3>Code snippets</h3></blockquote>
-    <blockquote><h3>Sample responses</h3></blockquote>
-    <blockquote><h3>Schemas</h3></blockquote>
+    <summary>Retrieve all delivery service work orders</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <details><summary>Show more</summary>
+            <blockquote>Request sample: Shell or cURL</blockquote>
+            <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code> 
+        </details></blockquote>
 </details>
 
 <details>
-    <summary>Kitchen</summary>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-    <blockquote><h3>Business object model</h3></blockquote>
-        <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
-        <img src="./img_10.png" width="30%" alt="Social Icons">
-    <blockquote><h3>End points</h3></blockquote>
-        <details>
-            <summary>Retrieve a parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-        <details>
-            <summary>Create a new parcel</summary>
-            <p>GET /workorder</p>
-        </details>
-    <blockquote><h3>Code snippets</h3></blockquote>
-    <blockquote><h3>Sample responses</h3></blockquote>
-    <blockquote><h3>Schemas</h3></blockquote>
+    <summary>Create a new delivery service work order</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <details><summary>Show more</summary>
+            <blockquote>Request sample: Shell or cURL</blockquote>
+            <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code> 
+        </details></blockquote>
 </details>
