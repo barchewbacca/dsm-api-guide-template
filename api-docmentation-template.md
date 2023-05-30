@@ -6,7 +6,7 @@ Our APIs provide the capabilities to efficiently manage both provider and delive
 
 The difference between provider and deliver service work orders ? delivery service work orders are the physical order items (like parcels, trucks, etc.,) and provider service work orders handles the service request like (kitchen installation)
 
-![img_7.png](img_7.png)
+<img src="./wom.png" width="50%" alt="Social Icons">
 
 
 # Getting started
@@ -28,32 +28,64 @@ The shipment has a reference and contains, among other things, information about
 
 # Authentication
 
-The work order API uses API keys to authenticate requests. You can view and manage your API keys in the work order Dashboard.
+### Authorization Code Flow
+[Authorization Code Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow)
+is the current Authentication/Authorization mechanism ILO&FF apps is using. In that flow, the application will connect with
+the identity provider (Auth0) to validate the identity of the user (via a challenge, in this case requesting the user
+IKEA credentials) and will return a JWT token containing the claims the identity has. In this claims, the token will contain
+the 'active_client_id' that WOH will use to retrieve all the attributes related to it and augment the SecurityIdentity
+to grant or revoke the access to the resources based on the policies defined.
 
-Test mode secret keys have the prefix sk_test_ and live mode secret keys have the prefix sk_live_. Alternatively, you can use restricted API keys for granular permissions.
+![img.png](auth_code_flow.png)
 
-Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
+### Client Credentials Flow
 
-Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
+[Client Credentials flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-credentials-flow) is the  
+authentication/authorization flow best suited for m2m communication.
 
-If you need to authenticate via bearer auth (e.g., for a cross-origin request), use -H "Authorization: Bearer sk_test_4eC39HqLyjWDarjtT1zdp7dc" instead of -u sk_test_4eC39HqLyjWDarjtT1zdp7dc.
+External parties and our e2e testing will use this flow as a way to operate with our API. As with the Authorization Code flow,
+the token returned by the Identity Provider (in this case Auth0) should contain all the claims assigned to the application,
+included the active client id. However, due to the high cost of integrating Auth0 with Auth Service via Hooks (as explained
+[here](https://allen.ingka.com/docs/default/component/auth-service/docs/Decisions/Custom_claims_via_Auth0#:~:text=an%20existing%20hook.-,Note,-%3A%20IAM%20team%20is))
+the JWT token returned by Auth0 won't contain the active client id information.
 
-All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
+As a temporary solution, the WOH service will accept a new HTTP Header (X-Active-Client-Id) the API consumers can use to
+specify what's the active client id they are trying to use. If the JWT token doesn't contain an active_client_id claim,
+the application will use the HTTP Header to validate the user has access to the requested resources.
 
-Related video: Authentication.
+![img.png](client_credentials.png)
 
-```bash
-curl https://api.stripe.com/v1/customers \
-  -u sk_test_4eC39HqLyjWDarjtT1zdp7dc:
-# The colon prevents curl from asking for a password.
+Example curl requests to perform the call:
+1. Retrieve JWT token:
 ```
-<blockquote>
-API KEY
+   curl --location 'https://icow.accounts.ingka.com/oauth/token' \
+   --header 'Content-Type: application/json' \
+   --data '{
+   "client_id": "<application client id>",
+   "client_secret": "<application client secret>",
+   "grant_type": "client_credentials",
+   "audience": "https://api.ingka.ikea.com",
+   "auth_service_system": "<application name>",
+   "auth_service_active_client_id": <active client id>
+   }'
+```
 
-A sample test API key is included in all the examples here, so you can test any example right away. Do not submit any personally identifiable information in requests made with this key.
+Right now, auth_service_system and auth_service_active_client_id won't do anything. In the future, Auth0 should return
+those as part of the claims in the Authorization Token.
 
-To test requests using your account, replace the sample API key with your actual API key or sign in.
-</blockquote>
+The url and the audience will change depending on the environment used.
+
+2. Connect to WOH
+```
+   curl --location 'https://api.ingka.cte.ikeadt.com/work-order-manager/work-order-service/workorders' \
+   --header 'X-Backend-Service-Authorization: Bearer <Token received in Step 1>
+   --header 'X-Client-Id: <Application client id>' \
+   --header 'X-Active-Client-Id: <active client id>' \
+```
+
+## Links
+* [Authentication Service](https://allen.ingka.com/docs/default/component/auth-service/docs/Decisions/Authentication_Service)
+* [Custom Claims in Auth0](https://allen.ingka.com/docs/default/component/auth-service/docs/Decisions/Custom_claims_via_Auth0)
 
 # Delivery service
 
