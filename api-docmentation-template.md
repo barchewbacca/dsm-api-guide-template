@@ -107,7 +107,63 @@ The url and the audience will change depending on the environment used.
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
+            </code>
+        <blockquote>200: Response sample</blockquote>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <blockquote>400: Response sample</blockquote>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
             </code> 
+        <blockquote>Response shcema object model</blockquote>
+        <img src="./img_13.png" width="30%" alt="Social Icons">
         </details></blockquote>
 </details>
 
