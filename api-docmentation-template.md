@@ -7,13 +7,13 @@ Our APIs provide the capabilities to efficiently manage both provider and delive
 The difference between provider and deliver service work orders ? delivery service work orders are the physical order items (like parcels, trucks, etc.,) and provider service work orders handles the service request like (kitchen installation)
 
 <p align="center" width="100%">
-    <img width="100%" src="./wom.png">
+    <img width="100%" src="assets/wom.png">
 </p>
 
-Let's start with work order `Business Object model`
+Let's start with work order `Business Object model` of work order
 
 <p align="center" width="100%">
-    <img width="50%" src="./img_11.png">
+    <img width="50%" src="assets/img_11.png">
 </p>
 
 
@@ -28,7 +28,7 @@ This article discusses the benefits of each API. For more information about the 
 How can you use our APIs ?
 
 <p align="center" width="100%">
-    <img width="75%" src="./img_3.png">
+    <img width="75%" src="assets/img_3.png">
 </p>
 
 Let's start with the business object model. The main business object is the work order which contains packages and usually has items.
@@ -47,7 +47,7 @@ the 'active_client_id' that WOH will use to retrieve all the attributes related 
 to grant or revoke the access to the resources based on the policies defined.
 
 <p align="center" width="100%">
-    <img width="50%" src="./auth_code_flow.png">
+    <img width="50%" src="assets/auth_code_flow.png">
 </p>
 
 ### Client Credentials Flow
@@ -66,7 +66,7 @@ specify what's the active client id they are trying to use. If the JWT token doe
 the application will use the HTTP Header to validate the user has access to the requested resources.
 
 <p align="center" width="100%">
-    <img width="50%" src="./client_credentials.png">
+    <img width="50%" src="assets/client_credentials.png">
 </p>
 
 Example curl requests to perform the call:
@@ -106,7 +106,7 @@ The url and the audience will change depending on the environment used.
 <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
 
 <p align="center" width="100%">
-    <img width="50%" src="./img_12.png">
+    <img width="50%" src="assets/img_12.png">
 </p>
 
 <details>
@@ -176,7 +176,7 @@ The url and the audience will change depending on the environment used.
             </code> 
         <h4>Response shcema object model</h4>
         <p align="center" width="100%">
-            <img width="50%" src="./img_13.png">
+            <img width="50%" src="assets/img_13.png">
         </p>
         </details>
 </details>
