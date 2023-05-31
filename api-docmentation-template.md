@@ -103,7 +103,7 @@ The url and the audience will change depending on the environment used.
 
 # Delivery services
 
-<p>Delivery service work order business object has N:1 relation to Route and 1:1 with shipment/order</p>
+Delivery service work order `Business Object` has N:1 relation to Route and 1:1 with shipment/order
 
 <p align="center" width="100%">
     <img width="50%" src="assets/img_12.png">
@@ -327,7 +327,7 @@ The url and the audience will change depending on the environment used.
 
 # Provided services
 
-<p>Delivery service work order business object has N:1 relation to Route and 1:1 with shipment/order</p>
+Provider service work order `Business Object` has N:1 relation to Route and 1:1 with shipment/order
 
 <p align="center" width="100%">
     <img width="50%" src="assets/img_12.png">
