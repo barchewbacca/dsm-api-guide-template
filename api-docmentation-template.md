@@ -100,15 +100,15 @@ The url and the audience will change depending on the environment used.
 <details>
     <summary>Retrieve a single delivery service work order</summary>
     <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
-        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <blockquote><h4>GET /api/v2/parcels</h4>
         <details><summary>Show more</summary>
-            <blockquote>Request sample: Shell or cURL</blockquote>
+            <h4>Request sample: Shell or cURL</h4>
             <code style="display:block; white-space:pre-wrap">curl --request GET 
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
             </code>
-        <blockquote>200: Response sample</blockquote>
+        <h4>200: Response sample</h4>
         <code style="display:block; white-space:pre-wrap">{
   "id": "",
   "creationDate": "2023-05-31T10:16:17+02:00",
@@ -156,13 +156,13 @@ The url and the audience will change depending on the environment used.
   }
 }
             </code>
-         <blockquote>400: Response sample</blockquote>
+         <h4>400: Response sample</h4>
         <code style="display:block; white-space:pre-wrap">curl --request GET 
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
             </code> 
-        <blockquote>Response shcema object model</blockquote>
+        <h4>Response shcema object model</h4>
         <img src="./img_13.png" width="30%" alt="Social Icons">
         </details></blockquote>
 </details>
