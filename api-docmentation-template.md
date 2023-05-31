@@ -28,7 +28,7 @@ This article discusses the benefits of each API. For more information about the 
 How can you use our APIs ?
 
 <p align="center" width="100%">
-    <img width="50%" src="./img_3.png">
+    <img width="75%" src="./img_3.png">
 </p>
 
 Let's start with the business object model. The main business object is the work order which contains packages and usually has items.
@@ -46,7 +46,9 @@ IKEA credentials) and will return a JWT token containing the claims the identity
 the 'active_client_id' that WOH will use to retrieve all the attributes related to it and augment the SecurityIdentity
 to grant or revoke the access to the resources based on the policies defined.
 
-![img.png](auth_code_flow.png)
+<p align="center" width="100%">
+    <img width="50%" src="./auth_code_flow.png">
+</p>
 
 ### Client Credentials Flow
 
@@ -63,7 +65,9 @@ As a temporary solution, the WOH service will accept a new HTTP Header (X-Active
 specify what's the active client id they are trying to use. If the JWT token doesn't contain an active_client_id claim,
 the application will use the HTTP Header to validate the user has access to the requested resources.
 
-![img.png](client_credentials.png)
+<p align="center" width="100%">
+    <img width="50%" src="./client_credentials.png">
+</p>
 
 Example curl requests to perform the call:
 1. Retrieve JWT token:
@@ -101,7 +105,9 @@ The url and the audience will change depending on the environment used.
 
 <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
 
-<img src="./img_12.png" width="30%" alt="Social Icons">
+<p align="center" width="100%">
+    <img width="50%" src="./img_12.png">
+</p>
 
 <details>
     <summary>Retrieve a single delivery service work order</summary>
@@ -169,7 +175,9 @@ The url and the audience will change depending on the environment used.
              --header 'Authorization: Basic undefined'
             </code> 
         <h4>Response shcema object model</h4>
-        <img src="./img_13.png" width="50%" alt="Social Icons">
+        <p align="center" width="100%">
+            <img width="50%" src="./img_13.png">
+        </p>
         </details>
 </details>
 
