@@ -8,6 +8,10 @@ The difference between provider and deliver service work orders ? delivery servi
 
 <img src="./wom.png" width="50%" alt="Social Icons">
 
+Let's start with work order `Business Object model`
+
+![img_11.png](img_11.png)
+
 
 # Getting started
 
@@ -91,7 +95,7 @@ The url and the audience will change depending on the environment used.
 
 <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
 
-<img src="./img_10.png" width="30%" alt="Social Icons">
+<img src="./img_12.png" width="30%" alt="Social Icons">
 
 <details>
     <summary>Retrieve a single delivery service work order</summary>
