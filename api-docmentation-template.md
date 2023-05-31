@@ -6,11 +6,15 @@ Our APIs provide the capabilities to efficiently manage both provider and delive
 
 The difference between provider and deliver service work orders ? delivery service work orders are the physical order items (like parcels, trucks, etc.,) and provider service work orders handles the service request like (kitchen installation)
 
-<img src="./wom.png" width="50%" alt="Social Icons">
+<p align="center" width="100%">
+    <img width="50%" src="./wom.png">
+</p>
 
 Let's start with work order `Business Object model`
 
-![img_11.png](img_11.png)
+<p align="center" width="100%">
+    <img width="50%" src="./img_11.png">
+</p>
 
 
 # Getting started
@@ -23,7 +27,9 @@ This article discusses the benefits of each API. For more information about the 
 
 How can you use our APIs ?
 
-![img_3.png](img_3.png)
+<p align="center" width="100%">
+    <img width="50%" src="./img_3.png">
+</p>
 
 Let's start with the business object model. The main business object is the work order which contains packages and usually has items.
 
@@ -163,7 +169,7 @@ The url and the audience will change depending on the environment used.
              --header 'Authorization: Basic undefined'
             </code> 
         <h4>Response shcema object model</h4>
-        <img src="./img_13.png" width="30%" alt="Social Icons">
+        <img src="./img_13.png" width="50%" alt="Social Icons">
         </details>
 </details>
 
