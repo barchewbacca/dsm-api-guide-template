@@ -7,7 +7,7 @@ Our APIs provide the capabilities to efficiently manage both provider and delive
 The difference between provider and deliver service work orders ? delivery service work orders are the physical order items (like parcels, trucks, etc.,) and provider service work orders handles the service request like (kitchen installation)
 
 <p align="center" width="100%">
-    <img width="50%" src="./wom.png">
+    <img width="100%" src="./wom.png">
 </p>
 
 Let's start with work order `Business Object model`
