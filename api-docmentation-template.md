@@ -100,7 +100,7 @@ The url and the audience will change depending on the environment used.
 <details>
     <summary>Retrieve a single delivery service work order</summary>
     <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
-        <blockquote><h4>GET /api/v2/parcels</h4>
+        <h4>GET /api/v2/parcels</h4>
         <details><summary>Show more</summary>
             <h4>Request sample: Shell or cURL</h4>
             <code style="display:block; white-space:pre-wrap">curl --request GET 
@@ -164,7 +164,7 @@ The url and the audience will change depending on the environment used.
             </code> 
         <h4>Response shcema object model</h4>
         <img src="./img_13.png" width="30%" alt="Social Icons">
-        </details></blockquote>
+        </details>
 </details>
 
 <details>
