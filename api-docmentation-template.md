@@ -103,7 +103,7 @@ The url and the audience will change depending on the environment used.
 
 # Delivery services
 
-<p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
+<p>Delivery service work order business object has N:1 relation to Route and 1:1 with shipment/order</p>
 
 <p align="center" width="100%">
     <img width="50%" src="assets/img_12.png">
@@ -327,7 +327,7 @@ The url and the audience will change depending on the environment used.
 
 # Provided services
 
-<p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
+<p>Delivery service work order business object has N:1 relation to Route and 1:1 with shipment/order</p>
 
 <p align="center" width="100%">
     <img width="50%" src="assets/img_12.png">
