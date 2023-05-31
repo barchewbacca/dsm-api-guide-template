@@ -21,9 +21,9 @@ Let's start with work order `Business Object model` of work order
 
 We offer both synchronous (REST) and asynchronous APIS. You can interact with both APIs using GitHub CLI, curl, the official Octokit libraries, and third party libraries. Occasionally, a feature may be supported on one API but not the other.
 
-You should use the API that best aligns with your needs and that you are most comfortable using. You don't need to exclusively use one API over the other. Node IDs let you move between the REST API and GraphQL API. For more information, see "Using global node IDs."
+You should use the API that best aligns with your needs and that you are most comfortable using. You don't need to exclusively use one API over the other. Node IDs let you move between the REST API and Async API. For more information, see "Using global node IDs."
 
-This article discusses the benefits of each API. For more information about the GraphQL API, see "About the GraphQL API." For more information about the REST API, see the REST documentation.
+This article discusses the benefits of each API. For more information about the GraphQL API, see "About the Async API." For more information about the REST API, see the REST documentation.
 
 How can you use our APIs ?
 
