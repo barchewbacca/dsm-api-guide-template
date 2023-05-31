@@ -101,7 +101,7 @@ The url and the audience will change depending on the environment used.
 * [Authentication Service](https://allen.ingka.com/docs/default/component/auth-service/docs/Decisions/Authentication_Service)
 * [Custom Claims in Auth0](https://allen.ingka.com/docs/default/component/auth-service/docs/Decisions/Custom_claims_via_Auth0)
 
-# Delivery service
+# Delivery services
 
 <p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
 
@@ -184,27 +184,369 @@ The url and the audience will change depending on the environment used.
 <details>
     <summary>Retrieve all delivery service work orders</summary>
     <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
-        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <h4>GET /api/v2/parcels</h4>
         <details><summary>Show more</summary>
-            <blockquote>Request sample: Shell or cURL</blockquote>
+            <h4>Request sample: Shell or cURL</h4>
             <code style="display:block; white-space:pre-wrap">curl --request GET 
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
+            </code>
+        <h4>200: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <h4>400: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
             </code> 
-        </details></blockquote>
+        <h4>Response shcema object model</h4>
+        <p align="center" width="100%">
+            <img width="50%" src="assets/img_13.png">
+        </p>
+        </details>
 </details>
 
 <details>
     <summary>Create a new delivery service work order</summary>
     <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
-        <blockquote><blockquote>GET /api/v2/parcels</blockquote> 
+        <h4>GET /api/v2/parcels</h4>
         <details><summary>Show more</summary>
-            <blockquote>Request sample: Shell or cURL</blockquote>
+            <h4>Request sample: Shell or cURL</h4>
             <code style="display:block; white-space:pre-wrap">curl --request GET 
              --url https://ingka.ikea.com/api/v2/parcels
              --header 'Accept: application/json' 
              --header 'Authorization: Basic undefined'
+            </code>
+        <h4>200: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <h4>400: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
             </code> 
-        </details></blockquote>
+        <h4>Response shcema object model</h4>
+        <p align="center" width="100%">
+            <img width="50%" src="assets/img_13.png">
+        </p>
+        </details>
 </details>
+
+# Provided services
+
+<p>The team worked closely with us to define our requirements, delivering the project over agreed phases to time and on budget</p>
+
+<p align="center" width="100%">
+    <img width="50%" src="assets/img_12.png">
+</p>
+
+<details>
+    <summary>Retrieve a single provider service work order</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <h4>GET /api/v2/parcels</h4>
+        <details><summary>Show more</summary>
+            <h4>Request sample: Shell or cURL</h4>
+            <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code>
+        <h4>200: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <h4>400: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code> 
+        <h4>Response shcema object model</h4>
+        <p align="center" width="100%">
+            <img width="50%" src="assets/img_13.png">
+        </p>
+        </details>
+</details>
+
+<details>
+    <summary>Retrieve all provider service work orders</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <h4>GET /api/v2/parcels</h4>
+        <details><summary>Show more</summary>
+            <h4>Request sample: Shell or cURL</h4>
+            <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code>
+        <h4>200: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <h4>400: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code> 
+        <h4>Response shcema object model</h4>
+        <p align="center" width="100%">
+            <img width="50%" src="assets/img_13.png">
+        </p>
+        </details>
+</details>
+
+<details>
+    <summary>Create a new provider service work order</summary>
+    <p> This endpoint allows you to retrieve a list of all the parcels which you have created or imported into your account under your API credentials. You can filter the results based on the query parameters provided below, in order to retrieve a specific parcel or list of parcels which match the defined criteria.
+        <h4>GET /api/v2/parcels</h4>
+        <details><summary>Show more</summary>
+            <h4>Request sample: Shell or cURL</h4>
+            <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code>
+        <h4>200: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">{
+  "id": "",
+  "creationDate": "2023-05-31T10:16:17+02:00",
+  "modifyDate": "2023-05-31T10:16:17+02:00",
+  "serviceOrderNumber": "16137437266",
+  "salesOrderId": "IKSE3726662",
+  "compartment": "EU",
+  "countryCode": "NL",
+  "type": "Pick up points",
+  "packages": 42,
+  "status": "Created",
+  "deliveryDate": "2022-05-31T14:00:00",
+  "originalDeliveryWindowUTC": {
+    "from": "",
+    "to": ""
+  },
+  "cdus": null,
+  "addresses": null,
+  "orderLines": null,
+  "serviceProvider": {
+    "carrierServiceDescription": "",
+    "carrierDescription": "",
+    "carrierService": "",
+    "carrier": "",
+    "tspId": "99002"
+  },
+  "trackingEvents": null,
+  "shipmentTrackingStatus": "Picked up by customer",
+  "carrier": {
+    "id": "",
+    "label": ""
+  },
+  "nodeKey": "LSC.2533",
+  "deliveryMethod": {
+    "code": "",
+    "name": ""
+  },
+  "shippingBusinessUnits": null,
+  "sellingBusinessUnit": "STO.949",
+  "deliveryPostalCode": "1054wn",
+  "promisedDeliveryWindowUTC": {
+    "from": "",
+    "to": "",
+    "timezone": ""
+  }
+}
+            </code>
+         <h4>400: Response sample</h4>
+        <code style="display:block; white-space:pre-wrap">curl --request GET 
+             --url https://ingka.ikea.com/api/v2/parcels
+             --header 'Accept: application/json' 
+             --header 'Authorization: Basic undefined'
+            </code> 
+        <h4>Response shcema object model</h4>
+        <p align="center" width="100%">
+            <img width="50%" src="assets/img_13.png">
+        </p>
+        </details>
+</details>
+
+# Labels
